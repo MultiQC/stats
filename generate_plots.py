@@ -5,14 +5,16 @@
 # dependencies = [
 #     "plotly",
 #     "pydriller",
+#     "typer",
 # ]
 # ///
 
 import fnmatch
-import json
 import plotly.graph_objects as go
 from pydriller import Repository, ModificationType
 import re
+import typer
+from pathlib import Path
 
 
 def extract_coauthors(commit_msg):
@@ -39,86 +41,102 @@ def extract_coauthors(commit_msg):
     return coauthors
 
 
-# Find when each new module was added to MultiQC
-modules = {}
-mods_plot_x = []
-mods_plot_y = []
+def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHub repository to analyze")):
+    """Generate MultiQC statistics plots from a GitHub repository."""
 
-# Track both committers and co-authors
-contributors = {}
-contributors_plot_x = []
-contributors_plot_y = []
+    # Validate that the path exists and is a directory
+    if not repo_path.exists():
+        typer.echo(f"Error: Path {repo_path} does not exist", err=True)
+        raise typer.Exit(1)
 
-for commit in Repository(".").traverse_commits():
-    # Count new modules
-    for modification in commit.modified_files:
-        if modification.change_type == ModificationType.ADD:
-            if fnmatch.fnmatch(modification.new_path, "multiqc/*"):
-                mod_match = re.match(
-                    r"multiqc/modules/([^/\.]+)", modification.new_path
-                )
-                if mod_match:
-                    mod = mod_match.group(1)
-                    if mod not in modules:
-                        modules[mod] = str(commit.committer_date)
-                        # Plotting data points
-                        mods_plot_x.append(commit.committer_date)
-                        mods_plot_y.append(len(modules))
+    if not repo_path.is_dir():
+        typer.echo(f"Error: Path {repo_path} is not a directory", err=True)
+        raise typer.Exit(1)
 
-    # Count new contributors (main committer)
-    if commit.committer.name not in contributors:
-        contributors[commit.committer.name] = str(commit.committer_date)
-        # Plotting data points
-        contributors_plot_x.append(commit.committer_date)
-        contributors_plot_y.append(len(contributors))
+    # Find when each new module was added to MultiQC
+    modules = {}
+    mods_plot_x = []
+    mods_plot_y = []
 
-    # Count co-authors from commit message
-    coauthors = extract_coauthors(commit.msg)
-    for coauthor in coauthors:
-        if coauthor not in contributors:
-            contributors[coauthor] = str(commit.committer_date)
+    # Track both committers and co-authors
+    contributors = {}
+    contributors_plot_x = []
+    contributors_plot_y = []
+
+    for commit in Repository(str(repo_path)).traverse_commits():
+        # Count new modules
+        for modification in commit.modified_files:
+            if modification.change_type == ModificationType.ADD:
+                if fnmatch.fnmatch(modification.new_path, "multiqc/*"):
+                    mod_match = re.match(
+                        r"multiqc/modules/([^/\.]+)", modification.new_path
+                    )
+                    if mod_match:
+                        mod = mod_match.group(1)
+                        if mod not in modules:
+                            modules[mod] = str(commit.committer_date)
+                            # Plotting data points
+                            mods_plot_x.append(commit.committer_date)
+                            mods_plot_y.append(len(modules))
+
+        # Count new contributors (main committer)
+        if commit.committer.name not in contributors:
+            contributors[commit.committer.name] = str(commit.committer_date)
             # Plotting data points
             contributors_plot_x.append(commit.committer_date)
             contributors_plot_y.append(len(contributors))
 
-print(f"Total modules found: {len(modules)}")
-print(f"Total contributors found (including co-authors): {len(contributors)}")
+        # Count co-authors from commit message
+        coauthors = extract_coauthors(commit.msg)
+        for coauthor in coauthors:
+            if coauthor not in contributors:
+                contributors[coauthor] = str(commit.committer_date)
+                # Plotting data points
+                contributors_plot_x.append(commit.committer_date)
+                contributors_plot_y.append(len(contributors))
 
-# Modules over time
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=mods_plot_x, y=mods_plot_y, fill="tozeroy", name="Modules"))
-fig.update_layout(
-    title="MultiQC modules over time",
-    xaxis_title="Date",
-    yaxis_title="Number of modules",
-    font=dict(family="Open Sans", size=18, color="#ffffff"),
-    plot_bgcolor="rgba(0, 0, 0, 0)",
-    paper_bgcolor="rgba(0, 0, 0, 0)",
-)
-fig.write_image("modules_over_time.svg")
+    typer.echo(f"Total modules found: {len(modules)}")
+    typer.echo(f"Total contributors found (including co-authors): {len(contributors)}")
 
-# Contributors over time (including co-authors from squash merges)
-fig = go.Figure()
-fig.add_trace(
-    go.Scatter(
-        x=contributors_plot_x,
-        y=contributors_plot_y,
-        fill="tozeroy",
-        name="Contributors",
+    # Modules over time
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=mods_plot_x, y=mods_plot_y, fill="tozeroy", name="Modules"))
+    fig.update_layout(
+        title="MultiQC modules over time",
+        xaxis_title="Date",
+        yaxis_title="Number of modules",
+        font=dict(family="Open Sans", size=18, color="#ffffff"),
+        plot_bgcolor="rgba(0, 0, 0, 0)",
+        paper_bgcolor="rgba(0, 0, 0, 0)",
     )
-)
-fig.update_layout(
-    title="MultiQC code contributors over time",
-    xaxis_title="Date",
-    yaxis_title="Number of contributors",
-    font=dict(family="Open Sans", size=18, color="#ffffff"),
-    plot_bgcolor="rgba(0, 0, 0, 0)",
-    paper_bgcolor="rgba(0, 0, 0, 0)",
-)
-fig.write_image("contributors_over_time.svg")
+    fig.write_image("modules_over_time.svg")
 
-print(f"\nGenerated charts:")
-print(f"- modules_over_time.svg ({len(modules)} modules)")
-print(
-    f"- contributors_over_time.svg ({len(contributors)} contributors, including co-authors from squash merges)"
-)
+    # Contributors over time (including co-authors from squash merges)
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatter(
+            x=contributors_plot_x,
+            y=contributors_plot_y,
+            fill="tozeroy",
+            name="Contributors",
+        )
+    )
+    fig.update_layout(
+        title="MultiQC code contributors over time",
+        xaxis_title="Date",
+        yaxis_title="Number of contributors",
+        font=dict(family="Open Sans", size=18, color="#ffffff"),
+        plot_bgcolor="rgba(0, 0, 0, 0)",
+        paper_bgcolor="rgba(0, 0, 0, 0)",
+    )
+    fig.write_image("contributors_over_time.svg")
+
+    typer.echo("\nGenerated charts:")
+    typer.echo(f"- modules_over_time.svg ({len(modules)} modules)")
+    typer.echo(
+        f"- contributors_over_time.svg ({len(contributors)} contributors, including co-authors from squash merges)"
+    )
+
+
+if __name__ == "__main__":
+    typer.run(generate_plots)
