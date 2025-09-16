@@ -6,6 +6,7 @@
 #     "plotly",
 #     "pydriller",
 #     "typer",
+#     "kaleido",
 # ]
 # ///
 
@@ -98,43 +99,49 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
     typer.echo(f"Total modules found: {len(modules)}")
     typer.echo(f"Total contributors found (including co-authors): {len(contributors)}")
 
-    # Modules over time
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=mods_plot_x, y=mods_plot_y, fill="tozeroy", name="Modules"))
-    fig.update_layout(
-        title="MultiQC modules over time",
-        xaxis_title="Date",
-        yaxis_title="Number of modules",
-        font=dict(family="Open Sans", size=18, color="#ffffff"),
-        plot_bgcolor="rgba(0, 0, 0, 0)",
-        paper_bgcolor="rgba(0, 0, 0, 0)",
-    )
-    fig.write_image("modules_over_time.svg")
+    # Generate both dark and light mode versions
+    for mode in ["dark", "light"]:
+        font_color = "#ffffff" if mode == "dark" else "#000000"
 
-    # Contributors over time (including co-authors from squash merges)
-    fig = go.Figure()
-    fig.add_trace(
-        go.Scatter(
-            x=contributors_plot_x,
-            y=contributors_plot_y,
-            fill="tozeroy",
-            name="Contributors",
+        # Modules over time
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=mods_plot_x, y=mods_plot_y, fill="tozeroy", name="Modules"))
+        fig.update_layout(
+            title="MultiQC modules over time",
+            xaxis_title="Date",
+            yaxis_title="Number of modules",
+            font=dict(family="Open Sans", size=18, color=font_color),
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
         )
-    )
-    fig.update_layout(
-        title="MultiQC code contributors over time",
-        xaxis_title="Date",
-        yaxis_title="Number of contributors",
-        font=dict(family="Open Sans", size=18, color="#ffffff"),
-        plot_bgcolor="rgba(0, 0, 0, 0)",
-        paper_bgcolor="rgba(0, 0, 0, 0)",
-    )
-    fig.write_image("contributors_over_time.svg")
+        filename = f"modules_over_time_{mode}.svg"
+        fig.write_image(filename)
+
+        # Contributors over time (including co-authors from squash merges)
+        fig = go.Figure()
+        fig.add_trace(
+            go.Scatter(
+                x=contributors_plot_x,
+                y=contributors_plot_y,
+                fill="tozeroy",
+                name="Contributors",
+            )
+        )
+        fig.update_layout(
+            title="MultiQC code contributors over time",
+            xaxis_title="Date",
+            yaxis_title="Number of contributors",
+            font=dict(family="Open Sans", size=18, color=font_color),
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
+        )
+        filename = f"contributors_over_time_{mode}.svg"
+        fig.write_image(filename)
 
     typer.echo("\nGenerated charts:")
-    typer.echo(f"- modules_over_time.svg ({len(modules)} modules)")
+    typer.echo(f"- modules_over_time_dark.svg and modules_over_time_light.svg ({len(modules)} modules)")
     typer.echo(
-        f"- contributors_over_time.svg ({len(contributors)} contributors, including co-authors from squash merges)"
+        f"- contributors_over_time_dark.svg and contributors_over_time_light.svg ({len(contributors)} contributors, including co-authors from squash merges)"
     )
 
 
