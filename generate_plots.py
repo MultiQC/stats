@@ -10,6 +10,7 @@
 # ]
 # ///
 
+import csv
 import fnmatch
 import plotly.graph_objects as go
 from pydriller import Repository, ModificationType
@@ -61,6 +62,7 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
 
     # Track both committers and co-authors
     contributors = {}
+    contributor_details = {}  # Store GitHub username and full name mapping
     contributors_plot_x = []
     contributors_plot_y = []
 
@@ -83,6 +85,23 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
         # Count new contributors (main committer)
         if commit.committer.name not in contributors:
             contributors[commit.committer.name] = str(commit.committer_date)
+
+            # Extract GitHub username from email if possible
+            github_username = None
+            if commit.committer.email and commit.committer.email.endswith('@users.noreply.github.com'):
+                # Format: username@users.noreply.github.com or 123456+username@users.noreply.github.com
+                email_part = commit.committer.email.replace('@users.noreply.github.com', '')
+                if '+' in email_part:
+                    github_username = email_part.split('+')[-1]
+                else:
+                    github_username = email_part
+
+            # Store contributor details
+            if github_username and github_username != commit.committer.name:
+                contributor_details[commit.committer.name] = f"{github_username} ({commit.committer.name})"
+            else:
+                contributor_details[commit.committer.name] = commit.committer.name
+
             # Plotting data points
             contributors_plot_x.append(commit.committer_date)
             contributors_plot_y.append(len(contributors))
@@ -92,12 +111,39 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
         for coauthor in coauthors:
             if coauthor not in contributors:
                 contributors[coauthor] = str(commit.committer_date)
+
+                # For co-authors, just use the name as-is since we don't have email info
+                contributor_details[coauthor] = coauthor
+
                 # Plotting data points
                 contributors_plot_x.append(commit.committer_date)
                 contributors_plot_y.append(len(contributors))
 
     typer.echo(f"Total modules found: {len(modules)}")
     typer.echo(f"Total contributors found (including co-authors): {len(contributors)}")
+
+    # Save raw data to CSV files
+    # Modules CSV
+    with open("modules_over_time.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["date", "cumulative_modules", "module_name"])
+
+        # Sort modules by date for proper CSV output
+        sorted_modules = sorted(modules.items(), key=lambda x: x[1])
+        for i, (module_name, date_str) in enumerate(sorted_modules, 1):
+            writer.writerow([date_str, i, module_name])
+
+    # Contributors CSV
+    with open("contributors_over_time.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["date", "cumulative_contributors", "contributor_name"])
+
+        # Sort contributors by date for proper CSV output
+        sorted_contributors = sorted(contributors.items(), key=lambda x: x[1])
+        for i, (contributor_name, date_str) in enumerate(sorted_contributors, 1):
+            # Use the detailed name format (GitHub username with full name in brackets if available)
+            detailed_name = contributor_details.get(contributor_name, contributor_name)
+            writer.writerow([date_str, i, detailed_name])
 
     # Generate both dark and light mode versions
     for mode in ["dark", "light"]:
@@ -138,11 +184,15 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
         filename = f"contributors_over_time_{mode}.svg"
         fig.write_image(filename)
 
-    typer.echo("\nGenerated charts:")
+    typer.echo("\nGenerated files:")
+    typer.echo("Charts:")
     typer.echo(f"- modules_over_time_dark.svg and modules_over_time_light.svg ({len(modules)} modules)")
     typer.echo(
         f"- contributors_over_time_dark.svg and contributors_over_time_light.svg ({len(contributors)} contributors, including co-authors from squash merges)"
     )
+    typer.echo("Raw data:")
+    typer.echo(f"- modules_over_time.csv ({len(modules)} modules with dates)")
+    typer.echo(f"- contributors_over_time.csv ({len(contributors)} contributors with dates)")
 
 
 if __name__ == "__main__":
