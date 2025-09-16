@@ -28,13 +28,15 @@ jobs:
       - name: Generate updated plots
         run: uv run generate_plots.py /tmp/multiqc-repo
 
-      - name: Check for changes
+      - name: Check for CSV changes
         id: verify-changed-files
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
+          if [ -n "$(git status --porcelain *.csv)" ]; then
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "CSV files have changed"
           else
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes in CSV files"
           fi
 
       - name: Commit and push changes

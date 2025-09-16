@@ -57,11 +57,17 @@ This will generate the statistics plots based on the actual MultiQC repository h
 
 ### Chart Generation
 
-The script creates four SVG files:
+The script creates both visual and data outputs:
+
+**SVG Charts:**
 - `modules_over_time_dark.svg` / `modules_over_time_light.svg`
 - `contributors_over_time_dark.svg` / `contributors_over_time_light.svg`
 
 Charts use different font colors (#ffffff for dark mode, #000000 for light mode) but identical transparent backgrounds.
+
+**CSV Data Files:**
+- `modules_over_time.csv` - Chronological module data with dates and cumulative counts
+- `contributors_over_time.csv` - Contributor data with GitHub usernames (when available) and full names in brackets
 
 ### README Integration
 
@@ -73,3 +79,21 @@ The README.md uses HTML `<picture>` elements with media queries to display the a
 - Co-author extraction is case-insensitive and handles various email formats
 - Bot filtering excludes "bot", "github-actions", and "multiqc bot" from contributor counts
 - All chart backgrounds are transparent (rgba(0,0,0,0)) for better integration
+- GitHub username extraction from noreply emails (`username@users.noreply.github.com` format)
+- CSV contributor format: `username (Full Name)` when GitHub username differs from commit name
+
+## Automation
+
+The repository includes a GitHub Actions workflow (`.github/workflows/update-plots.yml`) that:
+- Runs weekly on Sundays at 2 AM UTC
+- Can be manually triggered via `workflow_dispatch`
+- Clones the MultiQC repository and regenerates all plots and CSV files
+- Commits changes back to this repository only if CSV files have changed (SVG files are ignored since Plotly generates slightly different output each time)
+
+## File Structure
+
+- `generate_plots.py` - Main script (PEP 723 format with inline dependencies)
+- `README.md` - Documentation with responsive image display using `<picture>` elements
+- `*.svg` - Generated chart files (dark/light variants)
+- `*.csv` - Raw data files for further analysis
+- `.github/workflows/update-plots.yml` - Automated update workflow
