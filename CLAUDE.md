@@ -4,26 +4,40 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a standalone statistics generator for MultiQC, designed to analyze Git repositories and create visual plots showing:
+This is a standalone statistics generator for MultiQC with two main analysis tools:
+
+**Git Repository Analysis** (`generate_plots.py`):
 - Number of MultiQC modules over time
 - Number of contributors over time (including co-authors from commit messages)
 
-The repository contains a single Python script that uses PyDriller for Git analysis and Plotly for chart generation.
+**GitHub API Analysis** (`generate_github_stats.py`):
+- Issues created over time (cumulative)
+- Open issues over time
+- Pull requests created over time (cumulative)
+- Open pull requests over time
 
-## Running the Script
+Both scripts use PyDriller/PyGithub respectively and Plotly for chart generation.
 
-The main script is `generate_plots.py` and uses a PEP 723 script format with inline dependencies. Use `uv` to run the script:
+## Running the Scripts
 
+Both scripts use PEP 723 script format with inline dependencies. Use `uv` to run them:
+
+**Git Repository Analysis:**
 ```bash
-# Run the script with a path to the MultiQC repository using uv
+# Run with a path to the MultiQC repository using uv
 uv run generate_plots.py /path/to/multiqc/repo
 ```
 
-The script requires Python 3.8+ and will automatically install dependencies:
-- plotly (for chart generation)
-- pydriller (for Git repository analysis)
+**GitHub API Analysis:**
+```bash
+# Run with repository name and GitHub token
+uv run generate_github_stats.py MultiQC/MultiQC --token $(gh auth token)
+```
+
+Both scripts require Python 3.8+ and automatically install dependencies:
+- plotly, kaleido (for chart generation)
+- pydriller (for git analysis) / pygithub (for GitHub API)
 - typer (for CLI interface)
-- kaleido (for SVG image export)
 
 ## Testing
 
@@ -68,6 +82,10 @@ Charts use different font colors (#ffffff for dark mode, #000000 for light mode)
 **CSV Data Files:**
 - `modules_over_time.csv` - Chronological module data with dates and cumulative counts
 - `contributors_over_time.csv` - Contributor data with GitHub usernames (when available) and full names in brackets
+- `issues_created_over_time.csv` - Cumulative issues created data
+- `issues_open_over_time.csv` - Open issues count over time
+- `prs_created_over_time.csv` - Cumulative PRs created data
+- `prs_open_over_time.csv` - Open PRs count over time
 
 ### README Integration
 
@@ -90,10 +108,22 @@ The repository includes a GitHub Actions workflow (`.github/workflows/update-plo
 - Clones the MultiQC repository and regenerates all plots and CSV files
 - Commits changes back to this repository only if CSV files have changed (SVG files are ignored since Plotly generates slightly different output each time)
 
+## GitHub API Caching System
+
+The `generate_github_stats.py` script implements an intelligent caching system:
+
+**Cache Location**: `.cache/` directory (committed to git for GitHub Actions)
+**Cache Format**: JSON files named `{owner}_{repo}_cache.json`
+**Incremental Updates**: Only fetches new items since last cached item number
+**Resilience**: Saves cache every 100 items to prevent data loss on interruption
+**Performance**: Dramatically reduces API calls on subsequent runs
+
 ## File Structure
 
-- `generate_plots.py` - Main script (PEP 723 format with inline dependencies)
+- `generate_plots.py` - Git repository analysis script (PEP 723 format)
+- `generate_github_stats.py` - GitHub API analysis script (PEP 723 format)
 - `README.md` - Documentation with responsive image display using `<picture>` elements
-- `*.svg` - Generated chart files (dark/light variants)
-- `*.csv` - Raw data files for further analysis
+- `*.svg` - Generated chart files (dark/light variants for both scripts)
+- `*.csv` - Raw data files for further analysis (both git and GitHub data)
+- `.cache/` - GitHub API cache files (committed to enable GitHub Actions incremental updates)
 - `.github/workflows/update-plots.yml` - Automated update workflow
