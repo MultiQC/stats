@@ -244,44 +244,48 @@ def generate_plots_and_csv(
     """Generate plots and CSV files for all statistics."""
     typer.echo("Generating plots and CSV files...")
 
+    # Create output directories
+    os.makedirs("data", exist_ok=True)
+    os.makedirs("plots", exist_ok=True)
+
     # Generate CSV files
     # Issues created
-    with open("issues_created_over_time.csv", "w", newline="") as csvfile:
+    with open("data/issues_created_over_time.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["date", "cumulative_issues_created"])
         for date, count in zip(issues_created_dates, issues_created_counts):
             writer.writerow([date.isoformat(), count])
 
     # Issues open
-    with open("issues_open_over_time.csv", "w", newline="") as csvfile:
+    with open("data/issues_open_over_time.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["date", "issues_open"])
         for date, count in zip(issues_open_dates, issues_open_counts):
             writer.writerow([date.isoformat(), count])
 
     # PRs created
-    with open("prs_created_over_time.csv", "w", newline="") as csvfile:
+    with open("data/prs_created_over_time.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["date", "cumulative_prs_created"])
         for date, count in zip(prs_created_dates, prs_created_counts):
             writer.writerow([date.isoformat(), count])
 
     # PRs open
-    with open("prs_open_over_time.csv", "w", newline="") as csvfile:
+    with open("data/prs_open_over_time.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["date", "prs_open"])
         for date, count in zip(prs_open_dates, prs_open_counts):
             writer.writerow([date.isoformat(), count])
 
     # Issues created per month
-    with open("issues_monthly_new.csv", "w", newline="") as csvfile:
+    with open("data/issues_monthly_new.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["month_start", "new_issues"])
         for date, count in zip(issues_monthly_dates, issues_monthly_counts):
             writer.writerow([date.isoformat(), count])
 
     # PRs created per month
-    with open("prs_monthly_new.csv", "w", newline="") as csvfile:
+    with open("data/prs_monthly_new.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["month_start", "new_prs"])
         for date, count in zip(prs_monthly_dates, prs_monthly_counts):
@@ -308,7 +312,7 @@ def generate_plots_and_csv(
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
-        fig.write_image(f"issues_created_{mode}.svg")
+        fig.write_image(f"plots/issues_created_{mode}.svg")
 
         # Issues open over time
         fig = go.Figure()
@@ -327,7 +331,7 @@ def generate_plots_and_csv(
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
-        fig.write_image(f"issues_open_{mode}.svg")
+        fig.write_image(f"plots/issues_open_{mode}.svg")
 
         # PRs created over time
         fig = go.Figure()
@@ -346,7 +350,7 @@ def generate_plots_and_csv(
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
-        fig.write_image(f"prs_created_{mode}.svg")
+        fig.write_image(f"plots/prs_created_{mode}.svg")
 
         # PRs open over time
         fig = go.Figure()
@@ -365,7 +369,7 @@ def generate_plots_and_csv(
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
-        fig.write_image(f"prs_open_{mode}.svg")
+        fig.write_image(f"plots/prs_open_{mode}.svg")
 
         # Issues created per month
         fig = go.Figure()
@@ -385,7 +389,7 @@ def generate_plots_and_csv(
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
-        fig.write_image(f"issues_monthly_{mode}.svg")
+        fig.write_image(f"plots/issues_monthly_{mode}.svg")
 
         # PRs created per month
         fig = go.Figure()
@@ -405,7 +409,7 @@ def generate_plots_and_csv(
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
-        fig.write_image(f"prs_monthly_{mode}.svg")
+        fig.write_image(f"plots/prs_monthly_{mode}.svg")
 
 
 def generate_github_stats(

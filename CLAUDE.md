@@ -53,7 +53,7 @@ git clone https://github.com/MultiQC/MultiQC.git /tmp/multiqc-test
 uv run generate_plots.py /tmp/multiqc-test
 
 # Verify that both dark and light mode SVG files are generated
-ls -la *_dark.svg *_light.svg
+ls -la plots/*_dark.svg plots/*_light.svg
 ```
 
 This will generate the statistics plots based on the actual MultiQC repository history and verify that the script works correctly with real data.
@@ -75,27 +75,27 @@ This will generate the statistics plots based on the actual MultiQC repository h
 
 The script creates both visual and data outputs:
 
-**SVG Charts:**
-- `modules_over_time_dark.svg` / `modules_over_time_light.svg`
-- `contributors_over_time_dark.svg` / `contributors_over_time_light.svg`
-- `issues_created_dark.svg` / `issues_created_light.svg`
-- `issues_open_dark.svg` / `issues_open_light.svg`
-- `issues_monthly_dark.svg` / `issues_monthly_light.svg`
-- `prs_created_dark.svg` / `prs_created_light.svg`
-- `prs_open_dark.svg` / `prs_open_light.svg`
-- `prs_monthly_dark.svg` / `prs_monthly_light.svg`
+**SVG Charts (in `plots/` directory):**
+- `plots/modules_over_time_dark.svg` / `plots/modules_over_time_light.svg`
+- `plots/contributors_over_time_dark.svg` / `plots/contributors_over_time_light.svg`
+- `plots/issues_created_dark.svg` / `plots/issues_created_light.svg`
+- `plots/issues_open_dark.svg` / `plots/issues_open_light.svg`
+- `plots/issues_monthly_dark.svg` / `plots/issues_monthly_light.svg`
+- `plots/prs_created_dark.svg` / `plots/prs_created_light.svg`
+- `plots/prs_open_dark.svg` / `plots/prs_open_light.svg`
+- `plots/prs_monthly_dark.svg` / `plots/prs_monthly_light.svg`
 
 Charts use different font colors (#ffffff for dark mode, #000000 for light mode) but identical transparent backgrounds.
 
-**CSV Data Files:**
-- `modules_over_time.csv` - Chronological module data with dates and cumulative counts
-- `contributors_over_time.csv` - Contributor data with GitHub usernames (when available) and full names in brackets
-- `issues_created_over_time.csv` - Cumulative issues created data
-- `issues_open_over_time.csv` - Open issues count over time
-- `issues_monthly_new.csv` - New issues created per month
-- `prs_created_over_time.csv` - Cumulative PRs created data
-- `prs_open_over_time.csv` - Open PRs count over time
-- `prs_monthly_new.csv` - New PRs created per month
+**CSV Data Files (in `data/` directory):**
+- `data/modules_over_time.csv` - Chronological module data with dates and cumulative counts
+- `data/contributors_over_time.csv` - Contributor data with GitHub usernames (when available) and full names in brackets
+- `data/issues_created_over_time.csv` - Cumulative issues created data
+- `data/issues_open_over_time.csv` - Open issues count over time
+- `data/issues_monthly_new.csv` - New issues created per month
+- `data/prs_created_over_time.csv` - Cumulative PRs created data
+- `data/prs_open_over_time.csv` - Open PRs count over time
+- `data/prs_monthly_new.csv` - New PRs created per month
 
 ### README Integration
 
@@ -133,7 +133,7 @@ The `generate_github_stats.py` script implements an intelligent caching system:
 - `generate_plots.py` - Git repository analysis script (PEP 723 format)
 - `generate_github_stats.py` - GitHub API analysis script (PEP 723 format)
 - `README.md` - Documentation with responsive image display using `<picture>` elements
-- `*.svg` - Generated chart files (dark/light variants for both scripts)
-- `*.csv` - Raw data files for further analysis (both git and GitHub data)
+- `plots/` - Generated SVG chart files (dark/light variants for both scripts)
+- `data/` - Raw CSV data files for further analysis (both git and GitHub data)
 - `.cache/` - GitHub API cache files (committed to enable GitHub Actions incremental updates)
 - `.github/workflows/update-plots.yml` - Automated update workflow

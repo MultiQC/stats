@@ -12,6 +12,7 @@
 
 import csv
 import fnmatch
+import os
 import plotly.graph_objects as go
 from pydriller import Repository, ModificationType
 import re
@@ -122,9 +123,13 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
     typer.echo(f"Total modules found: {len(modules)}")
     typer.echo(f"Total contributors found (including co-authors): {len(contributors)}")
 
+    # Create output directories
+    os.makedirs("data", exist_ok=True)
+    os.makedirs("plots", exist_ok=True)
+
     # Save raw data to CSV files
     # Modules CSV
-    with open("modules_over_time.csv", "w", newline="") as csvfile:
+    with open("data/modules_over_time.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["date", "cumulative_modules", "module_name"])
 
@@ -134,7 +139,7 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
             writer.writerow([date_str, i, module_name])
 
     # Contributors CSV
-    with open("contributors_over_time.csv", "w", newline="") as csvfile:
+    with open("data/contributors_over_time.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["date", "cumulative_contributors", "contributor_name"])
 
@@ -161,7 +166,7 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
         filename = f"modules_over_time_{mode}.svg"
-        fig.write_image(filename)
+        fig.write_image(f"plots/{filename}")
 
         # Contributors over time (including co-authors from squash merges)
         fig = go.Figure()
@@ -182,7 +187,7 @@ def generate_plots(repo_path: Path = typer.Argument(..., help="Path to the GitHu
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
         filename = f"contributors_over_time_{mode}.svg"
-        fig.write_image(filename)
+        fig.write_image(f"plots/{filename}")
 
     typer.echo("\nGenerated files:")
     typer.echo("Charts:")
