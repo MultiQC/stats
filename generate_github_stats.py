@@ -20,6 +20,7 @@ import plotly.graph_objects as go
 import typer
 from typing import Dict, List, Tuple, Optional
 from github import Github
+from collections import defaultdict
 
 
 def get_github_client(token: str = None) -> Github:
@@ -198,6 +199,33 @@ def calculate_cumulative_stats(items_data: List[Dict], item_type: str) -> Tuple[
     return created_dates, created_counts, open_dates, open_counts
 
 
+def calculate_monthly_stats(items_data: List[Dict], item_type: str) -> Tuple[List[datetime], List[int]]:
+    """Calculate monthly creation statistics for items (issues or PRs)."""
+    typer.echo(f"Calculating monthly statistics for {item_type}...")
+
+    if not items_data:
+        return [], []
+
+    # Sort by creation date
+    items_data.sort(key=lambda x: x['created_at'])
+
+    # Group items by month (first day of month)
+    monthly_counts = defaultdict(int)
+
+    for item in items_data:
+        # Get first day of the month for this item
+        item_date = item['created_at']
+        month_start = item_date.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+
+        monthly_counts[month_start] += 1
+
+    # Convert to sorted lists
+    months = sorted(monthly_counts.keys())
+    counts = [monthly_counts[month] for month in months]
+
+    return months, counts
+
+
 def generate_plots_and_csv(
     repo_name: str,
     issues_created_dates: List[datetime],
@@ -207,7 +235,11 @@ def generate_plots_and_csv(
     prs_created_dates: List[datetime],
     prs_created_counts: List[int],
     prs_open_dates: List[datetime],
-    prs_open_counts: List[int]
+    prs_open_counts: List[int],
+    issues_monthly_dates: List[datetime],
+    issues_monthly_counts: List[int],
+    prs_monthly_dates: List[datetime],
+    prs_monthly_counts: List[int]
 ):
     """Generate plots and CSV files for all statistics."""
     typer.echo("Generating plots and CSV files...")
@@ -239,6 +271,20 @@ def generate_plots_and_csv(
         writer = csv.writer(csvfile)
         writer.writerow(["date", "prs_open"])
         for date, count in zip(prs_open_dates, prs_open_counts):
+            writer.writerow([date.isoformat(), count])
+
+    # Issues created per month
+    with open("issues_monthly_new.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["month_start", "new_issues"])
+        for date, count in zip(issues_monthly_dates, issues_monthly_counts):
+            writer.writerow([date.isoformat(), count])
+
+    # PRs created per month
+    with open("prs_monthly_new.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["month_start", "new_prs"])
+        for date, count in zip(prs_monthly_dates, prs_monthly_counts):
             writer.writerow([date.isoformat(), count])
 
     # Generate plots for both dark and light modes
@@ -321,6 +367,46 @@ def generate_plots_and_csv(
         )
         fig.write_image(f"prs_open_{mode}.svg")
 
+        # Issues created per month
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=issues_monthly_dates,
+            y=issues_monthly_counts,
+            mode='lines+markers',
+            name="New Issues per Month",
+            line=dict(color="rgb(255, 127, 14)"),
+            marker=dict(size=4)
+        ))
+        fig.update_layout(
+            title=f"{repo_name} - New Issues Per Month",
+            xaxis_title="Month",
+            yaxis_title="New Issues Created",
+            font=dict(family="Open Sans", size=18, color=font_color),
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
+        )
+        fig.write_image(f"issues_monthly_{mode}.svg")
+
+        # PRs created per month
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=prs_monthly_dates,
+            y=prs_monthly_counts,
+            mode='lines+markers',
+            name="New PRs per Month",
+            line=dict(color="rgb(44, 160, 44)"),
+            marker=dict(size=4)
+        ))
+        fig.update_layout(
+            title=f"{repo_name} - New Pull Requests Per Month",
+            xaxis_title="Month",
+            yaxis_title="New PRs Created",
+            font=dict(family="Open Sans", size=18, color=font_color),
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
+        )
+        fig.write_image(f"prs_monthly_{mode}.svg")
+
 
 def generate_github_stats(
     repo_name: str = typer.Argument(..., help="GitHub repository in format 'owner/repo'"),
@@ -359,26 +445,36 @@ def generate_github_stats(
     issues_created_dates, issues_created_counts, issues_open_dates, issues_open_counts = calculate_cumulative_stats(issues_data, "issues")
     prs_created_dates, prs_created_counts, prs_open_dates, prs_open_counts = calculate_cumulative_stats(prs_data, "PRs")
 
+    # Calculate monthly statistics
+    issues_monthly_dates, issues_monthly_counts = calculate_monthly_stats(issues_data, "issues")
+    prs_monthly_dates, prs_monthly_counts = calculate_monthly_stats(prs_data, "PRs")
+
     # Generate plots and CSV files
     generate_plots_and_csv(
         repo_name,
         issues_created_dates, issues_created_counts,
         issues_open_dates, issues_open_counts,
         prs_created_dates, prs_created_counts,
-        prs_open_dates, prs_open_counts
+        prs_open_dates, prs_open_counts,
+        issues_monthly_dates, issues_monthly_counts,
+        prs_monthly_dates, prs_monthly_counts
     )
 
     typer.echo("\nGenerated files:")
     typer.echo("Charts:")
     typer.echo(f"- issues_created_dark.svg and issues_created_light.svg ({len(issues_data)} issues)")
     typer.echo("- issues_open_dark.svg and issues_open_light.svg")
+    typer.echo(f"- issues_monthly_dark.svg and issues_monthly_light.svg ({len(issues_monthly_counts)} months)")
     typer.echo(f"- prs_created_dark.svg and prs_created_light.svg ({len(prs_data)} PRs)")
     typer.echo("- prs_open_dark.svg and prs_open_light.svg")
+    typer.echo(f"- prs_monthly_dark.svg and prs_monthly_light.svg ({len(prs_monthly_counts)} months)")
     typer.echo("Raw data:")
     typer.echo(f"- issues_created_over_time.csv ({len(issues_data)} issues)")
     typer.echo("- issues_open_over_time.csv")
+    typer.echo(f"- issues_monthly_new.csv ({len(issues_monthly_counts)} months)")
     typer.echo(f"- prs_created_over_time.csv ({len(prs_data)} PRs)")
     typer.echo("- prs_open_over_time.csv")
+    typer.echo(f"- prs_monthly_new.csv ({len(prs_monthly_counts)} months)")
 
 
 if __name__ == "__main__":

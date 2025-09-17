@@ -13,8 +13,10 @@ This is a standalone statistics generator for MultiQC with two main analysis too
 **GitHub API Analysis** (`generate_github_stats.py`):
 - Issues created over time (cumulative)
 - Open issues over time
+- New issues per month
 - Pull requests created over time (cumulative)
 - Open pull requests over time
+- New pull requests per month
 
 Both scripts use PyDriller/PyGithub respectively and Plotly for chart generation.
 
@@ -76,6 +78,12 @@ The script creates both visual and data outputs:
 **SVG Charts:**
 - `modules_over_time_dark.svg` / `modules_over_time_light.svg`
 - `contributors_over_time_dark.svg` / `contributors_over_time_light.svg`
+- `issues_created_dark.svg` / `issues_created_light.svg`
+- `issues_open_dark.svg` / `issues_open_light.svg`
+- `issues_monthly_dark.svg` / `issues_monthly_light.svg`
+- `prs_created_dark.svg` / `prs_created_light.svg`
+- `prs_open_dark.svg` / `prs_open_light.svg`
+- `prs_monthly_dark.svg` / `prs_monthly_light.svg`
 
 Charts use different font colors (#ffffff for dark mode, #000000 for light mode) but identical transparent backgrounds.
 
@@ -84,8 +92,10 @@ Charts use different font colors (#ffffff for dark mode, #000000 for light mode)
 - `contributors_over_time.csv` - Contributor data with GitHub usernames (when available) and full names in brackets
 - `issues_created_over_time.csv` - Cumulative issues created data
 - `issues_open_over_time.csv` - Open issues count over time
+- `issues_monthly_new.csv` - New issues created per month
 - `prs_created_over_time.csv` - Cumulative PRs created data
 - `prs_open_over_time.csv` - Open PRs count over time
+- `prs_monthly_new.csv` - New PRs created per month
 
 ### README Integration
 
