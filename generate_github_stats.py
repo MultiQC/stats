@@ -372,15 +372,15 @@ def generate_plots_and_csv(
         fig.add_trace(go.Scatter(
             x=issues_monthly_dates,
             y=issues_monthly_counts,
-            mode='lines+markers',
+            fill="tozeroy",
             name="New Issues per Month",
-            line=dict(color="rgb(255, 127, 14)"),
-            marker=dict(size=4)
+            line=dict(color="rgb(255, 127, 14)")
         ))
         fig.update_layout(
             title=f"{repo_name} - New Issues Per Month",
             xaxis_title="Month",
             yaxis_title="New Issues Created",
+            yaxis=dict(rangemode='tozero'),
             font=dict(family="Open Sans", size=18, color=font_color),
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
@@ -392,15 +392,15 @@ def generate_plots_and_csv(
         fig.add_trace(go.Scatter(
             x=prs_monthly_dates,
             y=prs_monthly_counts,
-            mode='lines+markers',
+            fill="tozeroy",
             name="New PRs per Month",
-            line=dict(color="rgb(44, 160, 44)"),
-            marker=dict(size=4)
+            line=dict(color="rgb(44, 160, 44)")
         ))
         fig.update_layout(
             title=f"{repo_name} - New Pull Requests Per Month",
             xaxis_title="Month",
             yaxis_title="New PRs Created",
+            yaxis=dict(rangemode='tozero'),
             font=dict(family="Open Sans", size=18, color=font_color),
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
