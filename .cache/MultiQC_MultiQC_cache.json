@@ -14287,6 +14287,38 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3361,
+      "title": "How to extract a list with samples that have overrepresented sequences?",
+      "created_at": "2025-10-10 08:53:00+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3360,
+      "title": "XeniumQC - failure to parse report after re-segmentation",
+      "created_at": "2025-10-09 13:51:31+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3359,
+      "title": "Add `seqkit stats` output for FASTQ stats",
+      "created_at": "2025-10-07 07:00:04+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3358,
+      "title": "multiqc_data log file",
+      "created_at": "2025-10-06 07:56:39+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -26843,5 +26875,5 @@
       "is_pr": true
     }
   ],
-  "last_updated": "2025-10-05T03:03:47.582831"
+  "last_updated": "2025-10-12T02:59:13.136459"
 }
