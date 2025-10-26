@@ -14335,6 +14335,30 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3372,
+      "title": "MultiQC v1.31 Xenium module fails with KeyError in combined plotting due to sample name mismatch between data collection and plotting",
+      "created_at": "2025-10-24 12:43:06+00:00",
+      "closed_at": "2025-10-25 22:14:15+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3371,
+      "title": "MultiQC 'top_modules' configuration isn't respected when inputs are from parquet files",
+      "created_at": "2025-10-24 03:15:56+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3369,
+      "title": "New Module: Sylph",
+      "created_at": "2025-10-23 20:02:29+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -26913,7 +26937,71 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3377,
+      "title": "Rich codex",
+      "created_at": "2025-10-25 23:33:21+00:00",
+      "closed_at": "2025-10-25 23:33:40+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3376,
+      "title": "Move most of xenium into a plugin",
+      "created_at": "2025-10-25 15:17:12+00:00",
+      "closed_at": "2025-10-25 22:12:44+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3375,
+      "title": "Bump vite from 7.1.10 to 7.1.11 in /multiqc/templates/disco",
+      "created_at": "2025-10-25 08:07:28+00:00",
+      "closed_at": "2025-10-25 09:09:54+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3374,
+      "title": "docs: Document Docker image variants with and without PDF support",
+      "created_at": "2025-10-25 07:13:09+00:00",
+      "closed_at": "2025-10-25 09:09:17+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3373,
+      "title": "Optimisations for loading large numbers of parquet files",
+      "created_at": "2025-10-24 22:48:39+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3370,
+      "title": "Create module for sylphtax output",
+      "created_at": "2025-10-23 20:04:07+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3368,
+      "title": "Bump vite from 7.0.0 to 7.0.8 in /multiqc/templates/default",
+      "created_at": "2025-10-22 17:52:48+00:00",
+      "closed_at": "2025-10-25 09:10:11+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3367,
+      "title": "add documentation about plotly bundle generation",
+      "created_at": "2025-10-21 10:05:00+00:00",
+      "closed_at": "2025-10-21 14:21:15+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2025-10-19T03:11:44.333303"
+  "last_updated": "2025-10-26T03:06:11.061255"
 }
