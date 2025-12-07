@@ -14439,6 +14439,46 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3416,
+      "title": "Pre-Commit Failing",
+      "created_at": "2025-12-05 15:27:42+00:00",
+      "closed_at": "2025-12-05 21:48:44+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3413,
+      "title": "html report requiring large amount of memory (~2GB) to display",
+      "created_at": "2025-12-05 09:38:04+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3412,
+      "title": "Python 3.14.1 breaks installation via conda",
+      "created_at": "2025-12-04 11:05:06+00:00",
+      "closed_at": "2025-12-05 11:01:24+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3411,
+      "title": "lima module breaks with output from Revio demultiplexing",
+      "created_at": "2025-12-03 19:52:26+00:00",
+      "closed_at": "2025-12-05 23:38:04+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3405,
+      "title": "The error content caused by the Python version is inconsistent with the error",
+      "created_at": "2025-12-01 08:46:47+00:00",
+      "closed_at": "2025-12-05 21:53:23+00:00",
+      "state": "closed",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -27217,7 +27257,95 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3420,
+      "title": "Add version fetching for HiCUP, QoRTs, QualiMap, RNA-SeQC",
+      "created_at": "2025-12-06 00:00:53+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3419,
+      "title": "Samtools coverage: Don't crash if incorrect number of columns found",
+      "created_at": "2025-12-05 23:49:56+00:00",
+      "closed_at": "2025-12-05 23:53:07+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3418,
+      "title": "fastp: Add support for naming samples after `--report_title` in Fastp command",
+      "created_at": "2025-12-05 22:19:51+00:00",
+      "closed_at": "2025-12-05 22:27:36+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3417,
+      "title": "Bump pre commit versions",
+      "created_at": "2025-12-05 21:42:20+00:00",
+      "closed_at": "2025-12-05 21:47:01+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3415,
+      "title": "Update Seqera AI chat URL",
+      "created_at": "2025-12-05 11:56:04+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3414,
+      "title": "Avoid Python 3.14.1",
+      "created_at": "2025-12-05 10:48:40+00:00",
+      "closed_at": "2025-12-05 11:01:23+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3410,
+      "title": "Refactor bbtools module to follow MultiQC conventions",
+      "created_at": "2025-12-03 13:31:47+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3409,
+      "title": "New claude skill for implementing modules, based on context from crea\u2026",
+      "created_at": "2025-12-02 20:52:30+00:00",
+      "closed_at": "2025-12-03 12:58:13+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3408,
+      "title": "New Module : wittyer (a tool for benchmarking structural variant (SV) calls against a truth set)",
+      "created_at": "2025-12-02 11:08:40+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3407,
+      "title": "[fastqc] switch adapter content plot into several subplots",
+      "created_at": "2025-12-02 11:06:09+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3406,
+      "title": "[nonpareil] Remove prefix to be consistent with other modules like fastqc",
+      "created_at": "2025-12-02 09:57:17+00:00",
+      "closed_at": "2025-12-06 19:08:02+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2025-11-30T03:21:55.714136"
+  "last_updated": "2025-12-07T03:21:59.413161"
 }
