@@ -14479,6 +14479,46 @@
       "closed_at": "2025-12-05 21:53:23+00:00",
       "state": "closed",
       "is_pr": false
+    },
+    {
+      "number": 3436,
+      "title": "porechop module: Error in calculation of \"End Trimmed Percent\"",
+      "created_at": "2025-12-12 18:03:45+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3435,
+      "title": "Add SVanalyser/SVbenchmark",
+      "created_at": "2025-12-11 15:38:32+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3434,
+      "title": "Add rtgtools/vcfeval",
+      "created_at": "2025-12-11 12:25:18+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3431,
+      "title": "Mosdepth General Stats Depth Regression",
+      "created_at": "2025-12-10 00:16:47+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3427,
+      "title": "feat: Option to replot line graphs as heatmaps",
+      "created_at": "2025-12-08 16:20:23+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -27345,7 +27385,103 @@
       "closed_at": "2025-12-06 19:08:02+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3437,
+      "title": "fix table scroll styling with sticky headers",
+      "created_at": "2025-12-12 22:06:23+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3433,
+      "title": "`export_plots_timeout`: Add docs and increase default to 60s",
+      "created_at": "2025-12-11 11:42:13+00:00",
+      "closed_at": "2025-12-11 12:06:35+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3432,
+      "title": "Fix mosdepth coverage in general stats if key is missing",
+      "created_at": "2025-12-10 16:24:12+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3430,
+      "title": "Bump default AI models for Anthropic",
+      "created_at": "2025-12-09 20:29:54+00:00",
+      "closed_at": "2025-12-09 20:44:38+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3429,
+      "title": "[nonpareil] Add missing anchors",
+      "created_at": "2025-12-09 15:18:48+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3428,
+      "title": "Changes for releasing v1.33",
+      "created_at": "2025-12-09 14:23:59+00:00",
+      "closed_at": "2025-12-09 16:02:16+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3426,
+      "title": "Address discussion in PR #3345 for BISCUIT module",
+      "created_at": "2025-12-08 15:30:00+00:00",
+      "closed_at": "2025-12-08 16:56:13+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3425,
+      "title": "Add SAV (Sequencing Analysis Viewer) module",
+      "created_at": "2025-12-08 15:00:23+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3424,
+      "title": "Add toggle to display line graphs as heatmaps",
+      "created_at": "2025-12-08 14:03:48+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3423,
+      "title": "Add decimal format for \"Glimpse\" and add \"axis_controlled_by_switches\" control",
+      "created_at": "2025-12-08 10:23:09+00:00",
+      "closed_at": "2025-12-08 16:49:53+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3422,
+      "title": "Version check: Add installation method to detect installs using `uv`",
+      "created_at": "2025-12-08 09:09:40+00:00",
+      "closed_at": "2025-12-08 12:37:33+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3421,
+      "title": "Custom content: strip whitespace around categories for tsv,csv",
+      "created_at": "2025-12-08 08:53:14+00:00",
+      "closed_at": "2025-12-08 08:53:33+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2025-12-07T03:21:59.413161"
+  "last_updated": "2025-12-14T03:24:06.267948"
 }
