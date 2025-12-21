@@ -14519,6 +14519,86 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3453,
+      "title": "Can integer values be switched to string type in custom data?",
+      "created_at": "2025-12-19 13:33:56+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3451,
+      "title": "Qualimap breaks due to \u221e  RNA report",
+      "created_at": "2025-12-18 13:45:38+00:00",
+      "closed_at": "2025-12-18 13:58:54+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3450,
+      "title": "fastplong (long read version of supported short read fastp)",
+      "created_at": "2025-12-18 11:23:59+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3449,
+      "title": "Dragen module fails to create 2 of 3 RNA mapping plots from dragen 4.4.6",
+      "created_at": "2025-12-18 10:23:43+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3445,
+      "title": "Add support for methurator",
+      "created_at": "2025-12-17 10:19:53+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3443,
+      "title": "CRAQ support (reference-free genome assembly evaluator)",
+      "created_at": "2025-12-16 10:28:55+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3442,
+      "title": "Inspector support (assembly evaluation with long read data)",
+      "created_at": "2025-12-16 10:16:41+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3441,
+      "title": "SNPsplit module broke",
+      "created_at": "2025-12-16 09:53:03+00:00",
+      "closed_at": "2025-12-17 09:08:17+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3439,
+      "title": "Toggling highlight from AI summary does not toggle as expected",
+      "created_at": "2025-12-14 23:41:38+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3438,
+      "title": "Highlighting no longer selects the correct color in light mode",
+      "created_at": "2025-12-14 23:36:28+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -27481,7 +27561,63 @@
       "closed_at": "2025-12-08 08:53:33+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3454,
+      "title": "fastp: Add limits, update color scale of % PF/% Adapter",
+      "created_at": "2025-12-20 18:53:21+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3452,
+      "title": "Add new module: RiboDetector",
+      "created_at": "2025-12-19 12:37:45+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3448,
+      "title": "Add additional sequali stats to general stats",
+      "created_at": "2025-12-18 05:26:21+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3447,
+      "title": "Methurator: New module",
+      "created_at": "2025-12-17 20:43:20+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3446,
+      "title": "Fix incorrect plot title in umicollapse module",
+      "created_at": "2025-12-17 18:06:00+00:00",
+      "closed_at": "2025-12-17 19:25:54+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3444,
+      "title": "SNPsplit: Fix module datetime serialization error",
+      "created_at": "2025-12-16 18:28:45+00:00",
+      "closed_at": "2025-12-17 09:08:16+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3440,
+      "title": "catch unexpected bedrock response shapes and log",
+      "created_at": "2025-12-16 00:50:06+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2025-12-14T03:24:06.267948"
+  "last_updated": "2025-12-21T03:24:18.035964"
 }
