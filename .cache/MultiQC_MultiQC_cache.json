@@ -14599,6 +14599,14 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3457,
+      "title": "samtools coverage subplot configuration",
+      "created_at": "2025-12-22 09:50:42+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -27617,7 +27625,39 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3459,
+      "title": "Fix custom_plot_config parsing for y_bands/x_bands/x_lines/y_lines",
+      "created_at": "2025-12-22 17:32:10+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3458,
+      "title": "CrosscheckFingerprints: Fix bug due to overwriting `row_number` variable",
+      "created_at": "2025-12-22 15:25:20+00:00",
+      "closed_at": "2025-12-22 17:09:19+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3456,
+      "title": "Porechop: Fix bug with \"End Trimmed Percent\" denominator",
+      "created_at": "2025-12-21 21:47:40+00:00",
+      "closed_at": "2025-12-21 21:48:28+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3455,
+      "title": "Fix bug: Toggling highlighting for AI summary sample names didn't work",
+      "created_at": "2025-12-21 20:29:37+00:00",
+      "closed_at": "2025-12-21 21:14:40+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2025-12-21T03:24:18.035964"
+  "last_updated": "2025-12-28T03:42:09.707460"
 }
