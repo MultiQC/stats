@@ -14623,6 +14623,46 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3477,
+      "title": "custom_content module - type",
+      "created_at": "2026-01-22 19:11:45+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3476,
+      "title": "bases2fastq module: output file naming convention request",
+      "created_at": "2026-01-21 16:02:01+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3475,
+      "title": "add support for newer and faster qc tools like falco",
+      "created_at": "2026-01-21 07:40:21+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3474,
+      "title": "MultiQC ccs module to support the latest (v8.x) output format",
+      "created_at": "2026-01-20 03:49:48+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3473,
+      "title": "\ud83d\udcda Daily Automated arXiv Updates for AI4Bio Papers",
+      "created_at": "2026-01-20 03:36:39+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -27761,7 +27801,15 @@
       "closed_at": "2026-01-12 19:07:14+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3478,
+      "title": "Update methurator module",
+      "created_at": "2026-01-23 16:34:57+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-01-18T03:30:59.454941"
+  "last_updated": "2026-01-25T03:48:19.931711"
 }
