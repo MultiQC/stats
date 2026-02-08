@@ -14663,6 +14663,22 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3482,
+      "title": "yPlotBands Configuration",
+      "created_at": "2026-02-04 20:59:11+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3481,
+      "title": "Xenium QC: `ValueError: No datasets to plot` when using imported segmentation (`segmented_cell_imported_count` is 0))",
+      "created_at": "2026-02-04 18:11:19+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -27817,7 +27833,15 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3480,
+      "title": "fix(cellranger_arc): prevent key collisions between ATAC and GEX metrics",
+      "created_at": "2026-02-04 17:29:12+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-02-01T04:23:56.252349"
+  "last_updated": "2026-02-08T04:28:34.981707"
 }
