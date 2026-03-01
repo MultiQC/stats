@@ -27937,7 +27937,47 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3499,
+      "title": "Bump rollup from 4.52.4 to 4.59.0 in /multiqc/templates/disco",
+      "created_at": "2026-02-28 18:24:28+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3498,
+      "title": "Bump rollup from 4.44.1 to 4.59.0 in /multiqc/templates/default",
+      "created_at": "2026-02-28 06:39:32+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3497,
+      "title": "adding native recognition for the ##Falco ",
+      "created_at": "2026-02-26 10:57:18+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3496,
+      "title": "Add native support for Falco QC report",
+      "created_at": "2026-02-26 10:13:07+00:00",
+      "closed_at": "2026-02-26 11:10:32+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3495,
+      "title": "Restore CSS and JavaScript sections from parquet file",
+      "created_at": "2026-02-24 03:27:40+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-02-22T04:10:17.294423"
+  "last_updated": "2026-03-01T04:15:52.787112"
 }
