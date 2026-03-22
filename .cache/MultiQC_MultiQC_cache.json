@@ -14751,6 +14751,22 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3511,
+      "title": "Haplocheck only reports last found file",
+      "created_at": "2026-03-19 16:38:31+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3510,
+      "title": "Replace deprecated `polars_lts_cpu` with `polars[rtcompat]`",
+      "created_at": "2026-03-18 11:23:39+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28049,7 +28065,31 @@
       "closed_at": "2026-03-12 12:30:59+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3513,
+      "title": "Add module for hifi_trimmer",
+      "created_at": "2026-03-20 10:54:59+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3512,
+      "title": "fix for #3511",
+      "created_at": "2026-03-19 16:42:24+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3509,
+      "title": "Remove HTML tags in generated module docs",
+      "created_at": "2026-03-18 01:08:56+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-03-15T04:27:07.735578"
+  "last_updated": "2026-03-22T04:12:48.457875"
 }
