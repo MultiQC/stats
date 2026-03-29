@@ -14767,6 +14767,30 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3518,
+      "title": "Cutadapt module broke",
+      "created_at": "2026-03-26 21:41:39+00:00",
+      "closed_at": "2026-03-27 18:59:22+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3517,
+      "title": "sdrf_pipelines.openms problem",
+      "created_at": "2026-03-26 11:44:23+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3514,
+      "title": "Bowtie1 bar plots adding up to > 100%",
+      "created_at": "2026-03-24 10:23:06+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28089,7 +28113,31 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3519,
+      "title": "enable defaultsort to include col1 header",
+      "created_at": "2026-03-28 20:35:44+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3516,
+      "title": "Bump picomatch in /multiqc/templates/default",
+      "created_at": "2026-03-25 21:59:08+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3515,
+      "title": "Bump picomatch in /multiqc/templates/disco",
+      "created_at": "2026-03-25 21:51:47+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-03-22T04:12:48.457875"
+  "last_updated": "2026-03-29T04:34:03.739908"
 }
