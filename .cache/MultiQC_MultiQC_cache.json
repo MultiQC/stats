@@ -14791,6 +14791,22 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3521,
+      "title": "multiqc --version returns wrong version",
+      "created_at": "2026-04-02 10:19:03+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3520,
+      "title": "Grouped sample totals and hierarchy are lost when merging reports via Parquet files",
+      "created_at": "2026-03-31 19:53:32+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28139,5 +28155,5 @@
       "is_pr": true
     }
   ],
-  "last_updated": "2026-03-29T04:34:03.739908"
+  "last_updated": "2026-04-05T04:31:12.187902"
 }
