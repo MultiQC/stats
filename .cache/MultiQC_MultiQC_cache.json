@@ -14839,6 +14839,38 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3536,
+      "title": "AttributeError: module 'rich' has no attribute 'panel' in module-broke exception handler (rich >= 14.3)",
+      "created_at": "2026-04-24 08:40:09+00:00",
+      "closed_at": "2026-04-24 09:28:58+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3535,
+      "title": "Exploration: use of ECharts instead of Plotly",
+      "created_at": "2026-04-23 07:37:56+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3534,
+      "title": "Default log_filesize_limit of 50MB is too low for  high-coverage sequencing data",
+      "created_at": "2026-04-21 20:31:05+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3533,
+      "title": "Feature request: table pagination and very large tables",
+      "created_at": "2026-04-21 14:44:49+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28225,7 +28257,31 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3537,
+      "title": "Fix: import rich.panel explicitly in module-broke exception handler",
+      "created_at": "2026-04-24 08:45:03+00:00",
+      "closed_at": "2026-04-24 09:28:57+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3532,
+      "title": "Generate new screengrabs with rich-codex",
+      "created_at": "2026-04-21 08:56:59+00:00",
+      "closed_at": "2026-04-21 08:58:24+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3531,
+      "title": "Freyja: Use safe alternative to `eval()`",
+      "created_at": "2026-04-21 07:00:53+00:00",
+      "closed_at": "2026-04-21 07:19:06+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-04-19T04:46:32.026768"
+  "last_updated": "2026-04-26T04:54:34.447720"
 }
