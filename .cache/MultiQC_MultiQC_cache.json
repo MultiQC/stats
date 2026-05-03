@@ -14871,6 +14871,14 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3539,
+      "title": "Parsing issue with `ngs-bits SampleGender`",
+      "created_at": "2026-04-28 05:56:06+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28281,7 +28289,15 @@
       "closed_at": "2026-04-21 07:19:06+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3538,
+      "title": "Add native Trim Galore v2.x module (closes #3529)",
+      "created_at": "2026-04-27 12:25:46+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-04-26T04:54:34.447720"
+  "last_updated": "2026-05-03T05:25:07.340709"
 }
