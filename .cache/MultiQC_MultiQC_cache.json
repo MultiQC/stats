@@ -28297,7 +28297,47 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3544,
+      "title": "Bump postcss from 8.5.6 to 8.5.14 in /multiqc/templates/default",
+      "created_at": "2026-05-07 23:31:19+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3543,
+      "title": "Bump postcss from 8.5.6 to 8.5.14 in /multiqc/templates/disco",
+      "created_at": "2026-05-07 23:28:08+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3542,
+      "title": "Bump minimum Python to 3.9",
+      "created_at": "2026-05-07 23:23:52+00:00",
+      "closed_at": "2026-05-07 23:24:47+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3541,
+      "title": "New module: hicstuff",
+      "created_at": "2026-05-05 21:46:41+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3540,
+      "title": "Add MultiQC module for riker",
+      "created_at": "2026-05-03 14:59:05+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-05-03T05:25:07.340709"
+  "last_updated": "2026-05-10T05:31:55.598010"
 }
