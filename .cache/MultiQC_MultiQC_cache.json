@@ -14919,6 +14919,14 @@
       "closed_at": "2026-05-11 22:17:24+00:00",
       "state": "closed",
       "is_pr": false
+    },
+    {
+      "number": 3580,
+      "title": "Sum of \"Reads mapped\" from samtools flagstat when grouping multiple lanes",
+      "created_at": "2026-05-19 12:20:34+00:00",
+      "closed_at": "2026-05-20 22:00:48+00:00",
+      "state": "closed",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28601,7 +28609,95 @@
       "closed_at": "2026-05-11 11:21:12+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3589,
+      "title": "Add opt-in pagination for large tables",
+      "created_at": "2026-05-21 20:06:48+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3588,
+      "title": "Update summarization endpoints",
+      "created_at": "2026-05-21 14:06:26+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3587,
+      "title": "Fix SampleGender parsing for unknown gender",
+      "created_at": "2026-05-21 09:34:38+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3586,
+      "title": "Add support for lineage column in Nextclade",
+      "created_at": "2026-05-21 05:33:05+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3585,
+      "title": "feat(flue): chain triage \u2192 module-triage via labels",
+      "created_at": "2026-05-20 17:20:42+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3584,
+      "title": "feat(flue): module-triage background agent, drop module-requests workflow",
+      "created_at": "2026-05-20 17:04:29+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3583,
+      "title": "feat(flue): pr-review background agent, drop claude-code-review workflows",
+      "created_at": "2026-05-20 17:02:19+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3582,
+      "title": "feat(flue): issue-triage background agent, drop @claude mention bot",
+      "created_at": "2026-05-20 16:59:21+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3581,
+      "title": "Samtools flagstat: Sum reads for grouped samples",
+      "created_at": "2026-05-19 18:22:38+00:00",
+      "closed_at": "2026-05-20 22:00:46+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3579,
+      "title": "Config schema: More, stricter validation",
+      "created_at": "2026-05-19 08:38:58+00:00",
+      "closed_at": "2026-05-19 09:13:30+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3578,
+      "title": "Config wizard: type-picker for union-typed config options",
+      "created_at": "2026-05-19 00:26:24+00:00",
+      "closed_at": "2026-05-19 00:30:50+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-05-17T05:43:14.458583"
+  "last_updated": "2026-05-24T05:56:03.702691"
 }
