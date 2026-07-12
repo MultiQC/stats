@@ -14943,6 +14943,30 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3606,
+      "title": "Sample name not shown when selecting a dataset in \"Per Base Sequence Content\" (FastQC module)",
+      "created_at": "2026-07-09 10:02:54+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3604,
+      "title": "mosdepth: add per-region coverage table from regions.bed.gz and thresholds.bed.gz",
+      "created_at": "2026-07-06 13:16:55+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3603,
+      "title": "New module: cramino",
+      "created_at": "2026-07-06 13:08:10+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28793,7 +28817,15 @@
       "closed_at": "2026-06-29 07:04:35+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3605,
+      "title": "update drage, fastp, fsatqc, qorts, salmon modules",
+      "created_at": "2026-07-06 14:51:03+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-07-05T05:57:38.199336"
+  "last_updated": "2026-07-12T05:19:40.674382"
 }
