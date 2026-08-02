@@ -14975,6 +14975,22 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3616,
+      "title": "Add support for additional columns in Software Versions section",
+      "created_at": "2026-07-31 15:39:59+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3614,
+      "title": "Input file parsing by jcvi module is incorrect",
+      "created_at": "2026-07-27 15:07:16+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28865,7 +28881,39 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3617,
+      "title": "Bump postcss from 8.5.14 to 8.5.25 in /multiqc/templates/disco",
+      "created_at": "2026-08-02 00:09:05+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3615,
+      "title": "Add cramino module for long-read alignment QC",
+      "created_at": "2026-07-27 19:39:15+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3613,
+      "title": "mosdepth: fix pre-existing mypy errors",
+      "created_at": "2026-07-27 14:53:45+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3612,
+      "title": "mosdepth: add per-region coverage table from regions.bed.gz and thresholds.bed.gz",
+      "created_at": "2026-07-27 14:42:57+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-07-26T05:24:16.017448"
+  "last_updated": "2026-08-02T05:19:46.956871"
 }
