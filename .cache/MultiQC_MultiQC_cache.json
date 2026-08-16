@@ -14991,6 +14991,38 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3625,
+      "title": "Adding general statistics column (min max values switched?)",
+      "created_at": "2026-08-13 08:42:11+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3624,
+      "title": "MaxQuant plugin absent/not working",
+      "created_at": "2026-08-13 06:23:38+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3621,
+      "title": "module request: FastDup",
+      "created_at": "2026-08-10 11:11:16+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3620,
+      "title": "Seed the jitter in the somalier sex-check plot",
+      "created_at": "2026-08-09 07:45:54+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -28929,7 +28961,39 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3627,
+      "title": "Fix mypy union-attr error in is_running_in_notebook",
+      "created_at": "2026-08-13 17:34:19+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3626,
+      "title": "Add native vcf-sv-stats module",
+      "created_at": "2026-08-13 13:51:20+00:00",
+      "closed_at": "2026-08-13 19:45:49+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3623,
+      "title": "Bump postcss from 8.5.14 to 8.5.26 in /multiqc/templates/default",
+      "created_at": "2026-08-12 02:59:29+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3622,
+      "title": "Seed the jitter in somalier and peddy sex-check plots",
+      "created_at": "2026-08-11 10:06:00+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-08-09T03:25:50.263664"
+  "last_updated": "2026-08-16T02:53:59.794312"
 }
