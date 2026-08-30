@@ -29017,7 +29017,31 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3633,
+      "title": "chore: dependency updates and CI fixes",
+      "created_at": "2026-08-28 08:39:38+00:00",
+      "closed_at": "2026-08-28 09:27:50+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3632,
+      "title": "Feat/include coefficient of variation",
+      "created_at": "2026-08-25 13:20:38+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3631,
+      "title": "Fix log warning for missing fastqc data file",
+      "created_at": "2026-08-24 07:52:12+00:00",
+      "closed_at": "2026-08-28 08:03:42+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-08-23T02:56:09.160839"
+  "last_updated": "2026-08-30T07:42:00.854018"
 }
