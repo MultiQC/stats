@@ -29041,7 +29041,95 @@
       "closed_at": "2026-08-28 08:03:42+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3645,
+      "title": "feat(riker): group alignment table by sample with pair as primary row",
+      "created_at": "2026-09-05 14:01:15+00:00",
+      "closed_at": "2026-09-05 16:17:50+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3644,
+      "title": "fix(jcvi): relax genestats header validation for variable table widths (#3614)",
+      "created_at": "2026-09-04 17:25:17+00:00",
+      "closed_at": "2026-09-05 16:20:08+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3643,
+      "title": "Harden the fix linting workflow",
+      "created_at": "2026-09-02 23:05:51+00:00",
+      "closed_at": "2026-09-02 23:11:30+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3642,
+      "title": "Fix open CodeQL code scanning alerts",
+      "created_at": "2026-09-02 22:40:09+00:00",
+      "closed_at": "2026-09-02 22:53:41+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3641,
+      "title": "fix(riker): tolerate empty metric fields in TSV parsers",
+      "created_at": "2026-09-02 16:00:58+00:00",
+      "closed_at": "2026-09-02 21:44:40+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3640,
+      "title": "Tables: sort by the renamed sample names, not the original ones",
+      "created_at": "2026-09-01 21:45:55+00:00",
+      "closed_at": "2026-09-02 21:35:26+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3639,
+      "title": "Add License and DOI columns to Software Versions section",
+      "created_at": "2026-08-31 16:26:43+00:00",
+      "closed_at": "2026-09-02 22:22:11+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3637,
+      "title": "Per-base sequence content as a first-class plot type (both backends)",
+      "created_at": "2026-08-31 13:40:21+00:00",
+      "closed_at": "2026-08-31 15:18:08+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3636,
+      "title": "FastQ Screen: fix docstring that refers to a config that no longer exists",
+      "created_at": "2026-08-31 07:46:08+00:00",
+      "closed_at": "2026-08-31 07:46:30+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3635,
+      "title": "Replace Plotly with Echarts",
+      "created_at": "2026-08-31 06:34:17+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3634,
+      "title": "New module: OrthoFinder",
+      "created_at": "2026-08-30 20:55:31+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-08-30T07:42:00.854018"
+  "last_updated": "2026-09-06T06:41:54.883743"
 }
