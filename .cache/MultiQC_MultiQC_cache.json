@@ -15087,6 +15087,38 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3684,
+      "title": "Bug that duplicate items in report when multiple multiqc usage in the same directory",
+      "created_at": "2026-09-24 16:50:34+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3677,
+      "title": "Bug with custom png when name ends with \"m\"",
+      "created_at": "2026-09-23 15:49:47+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3675,
+      "title": "Missing units in \"Export as CSV...\" -> \"Data\"",
+      "created_at": "2026-09-21 18:55:21+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
+    },
+    {
+      "number": 3673,
+      "title": "isoseq module: refine JSON table renders empty - expects flat keys, actual pbreports format nests them in 'attributes'",
+      "created_at": "2026-09-21 14:17:44+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -29329,7 +29361,87 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3683,
+      "title": "Remove the preview report backfill trigger",
+      "created_at": "2026-09-24 09:36:11+00:00",
+      "closed_at": "2026-09-24 09:43:41+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3682,
+      "title": "Post module preview reports automatically",
+      "created_at": "2026-09-24 08:37:36+00:00",
+      "closed_at": "2026-09-24 09:10:43+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3681,
+      "title": "Hide previous preview report comments as outdated",
+      "created_at": "2026-09-24 06:28:51+00:00",
+      "closed_at": "2026-09-24 06:30:01+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3680,
+      "title": "Compact preview report comment with embedded screenshot",
+      "created_at": "2026-09-23 22:09:46+00:00",
+      "closed_at": "2026-09-23 22:15:39+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3679,
+      "title": "Match /report and /review only at the start of a line",
+      "created_at": "2026-09-23 21:51:39+00:00",
+      "closed_at": "2026-09-23 21:53:28+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3678,
+      "title": "Add comment slash-command to generate a preview report for PRs",
+      "created_at": "2026-09-23 21:28:21+00:00",
+      "closed_at": "2026-09-23 21:47:00+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3676,
+      "title": "New module: fgumi",
+      "created_at": "2026-09-23 09:28:57+00:00",
+      "closed_at": "2026-09-24 21:24:46+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3674,
+      "title": "New module: mgnifam",
+      "created_at": "2026-09-21 17:17:39+00:00",
+      "closed_at": "2026-09-24 20:49:29+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3672,
+      "title": "Fix Windows code check exemptions",
+      "created_at": "2026-09-20 17:44:31+00:00",
+      "closed_at": "2026-09-22 08:13:52+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3671,
+      "title": "Fixed parsing bug in spaceranger",
+      "created_at": "2026-09-20 08:13:40+00:00",
+      "closed_at": "2026-09-22 08:21:57+00:00",
+      "state": "closed",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-09-20T07:17:50.658773"
+  "last_updated": "2026-09-27T07:22:45.337030"
 }
