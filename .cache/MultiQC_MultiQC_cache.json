@@ -15119,6 +15119,22 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3690,
+      "title": "mosdepth module broke",
+      "created_at": "2026-10-02 04:24:39+00:00",
+      "closed_at": "2026-10-02 08:36:48+00:00",
+      "state": "closed",
+      "is_pr": false
+    },
+    {
+      "number": 3686,
+      "title": "`--export` prints `OSError: Directory not empty` at exit on Python 3.14 when $TMPDIR is on NFS",
+      "created_at": "2026-09-30 02:50:28+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -29441,7 +29457,167 @@
       "closed_at": "2026-09-22 08:21:57+00:00",
       "state": "closed",
       "is_pr": true
+    },
+    {
+      "number": 3706,
+      "title": "feat(dupblaster): add a module for dupblaster duplicate metrics",
+      "created_at": "2026-10-03 02:37:05+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3705,
+      "title": "Adding AMRFinder Module",
+      "created_at": "2026-10-02 17:22:06+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3704,
+      "title": "bases2fastq: use filesystem-safe data file names",
+      "created_at": "2026-10-02 15:28:21+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3703,
+      "title": "fastp: add base count columns to General Stats",
+      "created_at": "2026-10-02 15:28:15+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3702,
+      "title": "fastp: add reads before filtering to General Stats",
+      "created_at": "2026-10-02 15:28:10+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3701,
+      "title": "phantompeakqualtools: skip comment and blank lines",
+      "created_at": "2026-10-02 15:27:59+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3700,
+      "title": "FastQC: ignore Basic Statistics in failed-modules percentage and status heatmap",
+      "created_at": "2026-10-02 15:27:47+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3699,
+      "title": "Fix duplicated modules when re-running MultiQC in the same directory",
+      "created_at": "2026-10-02 15:11:12+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3698,
+      "title": "isoseq: support pbreports-format refine JSON",
+      "created_at": "2026-10-02 15:11:01+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3697,
+      "title": "fix(fastqc): show sample name and axis titles on single-sample sequence content plot",
+      "created_at": "2026-10-02 15:10:49+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3696,
+      "title": "CheckM2: support --allmodels report headers",
+      "created_at": "2026-10-02 15:10:40+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3695,
+      "title": "fix(profile-runtime): use a single category in run time bar plots",
+      "created_at": "2026-10-02 15:10:28+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3694,
+      "title": "SortMeRNA: use first reads file as sample name for paired-end logs",
+      "created_at": "2026-10-02 15:09:27+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3693,
+      "title": "Bump dompurify from 3.4.15 to 3.4.16 in /multiqc/templates/default",
+      "created_at": "2026-10-02 08:43:10+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3692,
+      "title": "Add console output to preview comments",
+      "created_at": "2026-10-02 08:40:43+00:00",
+      "closed_at": "2026-10-02 08:41:57+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3691,
+      "title": "mosdepth: skip truncated or malformed files with a warning",
+      "created_at": "2026-10-02 08:24:57+00:00",
+      "closed_at": "2026-10-02 08:36:47+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3689,
+      "title": "Enhance RiboDetector section with summary statistics table",
+      "created_at": "2026-10-02 03:30:16+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3688,
+      "title": "Expose WebMCP tools in HTML reports",
+      "created_at": "2026-10-01 19:54:03+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3687,
+      "title": "Add a ChatGPT tool for downloadable MultiQC reports",
+      "created_at": "2026-10-01 19:26:14+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3685,
+      "title": "mgnifam: match stats files by name, plot seed MSA size",
+      "created_at": "2026-09-28 12:30:54+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-09-27T07:22:45.337030"
+  "last_updated": "2026-10-04T07:37:01.439425"
 }
