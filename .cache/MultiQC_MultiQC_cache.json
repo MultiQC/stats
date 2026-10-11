@@ -15135,6 +15135,14 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3713,
+      "title": "Support riker error",
+      "created_at": "2026-10-08 13:06:19+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -29617,7 +29625,55 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3712,
+      "title": "ci: skip module preview report on forks",
+      "created_at": "2026-10-07 14:09:24+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3711,
+      "title": "Update GitHub Actions, npm deps and prek hooks",
+      "created_at": "2026-10-06 16:11:46+00:00",
+      "closed_at": "2026-10-06 16:23:10+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3710,
+      "title": "Bump source-map-js from 1.2.1 to 1.2.2 in /multiqc/templates/disco",
+      "created_at": "2026-10-06 16:03:10+00:00",
+      "closed_at": "2026-10-06 16:25:25+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3709,
+      "title": "Fix wide parquet table merge losing samples or crashing",
+      "created_at": "2026-10-06 15:56:36+00:00",
+      "closed_at": "2026-10-06 16:04:47+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3708,
+      "title": "Tidy repo root: single AGENTS.md, drop setup.py and stale configs",
+      "created_at": "2026-10-06 15:38:57+00:00",
+      "closed_at": "2026-10-06 15:57:56+00:00",
+      "state": "closed",
+      "is_pr": true
+    },
+    {
+      "number": 3707,
+      "title": "Add FastDup metrics and yield plots",
+      "created_at": "2026-10-04 17:37:55+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-10-04T07:37:01.439425"
+  "last_updated": "2026-10-11T08:03:31.650037"
 }
