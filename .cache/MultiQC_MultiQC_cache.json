@@ -15159,6 +15159,14 @@
       "closed_at": null,
       "state": "open",
       "is_pr": false
+    },
+    {
+      "number": 3728,
+      "title": "New module: MLST",
+      "created_at": "2026-11-04 21:10:46+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": false
     }
   ],
   "prs": [
@@ -29785,7 +29793,31 @@
       "closed_at": null,
       "state": "open",
       "is_pr": true
+    },
+    {
+      "number": 3731,
+      "title": "Preserve units in table CSV and TSV export headers",
+      "created_at": "2026-11-08 01:21:52+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3730,
+      "title": "ai: update default Anthropic model to claude-sonnet-5-5 and omit deprecated temperature",
+      "created_at": "2026-11-07 17:04:37+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
+    },
+    {
+      "number": 3729,
+      "title": "New module: MLST",
+      "created_at": "2026-11-04 22:50:17+00:00",
+      "closed_at": null,
+      "state": "open",
+      "is_pr": true
     }
   ],
-  "last_updated": "2026-11-01T08:27:15.386815"
+  "last_updated": "2026-11-08T08:20:56.276232"
 }
